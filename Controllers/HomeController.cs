@@ -30,6 +30,12 @@ namespace UploadImage.Controllers
             return View(items);
         }
 
+        public IActionResult Edit(int id)
+        {
+            var student = _context.Students.Where(x=> x.Id == id).FirstOrDefault();
+            return View(student);
+        }
+
         public IActionResult Create()
         {
             return View();
